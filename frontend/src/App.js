@@ -2,7 +2,8 @@ import React from "react";
 import {
   Route,
   NavLink,
-  BrowserRouter as Router
+  BrowserRouter as Router,
+  Redirect
 } from "react-router-dom";
 
 
@@ -21,12 +22,12 @@ const App = () =>  {
                 <li><NavLink to = "/SEPractice">Select the Practice</NavLink></li>
                 <li><NavLink to = "/SubmitArticle">Submit an Article</NavLink></li>
             </ul>
-            </ul>
           <div className="content">
             <Route exact path="/" component={Home}/>
             <Route  path="/SEPractice" component={SEPractice}/>
-            <Route  path="/SubmitArticle" component={SubmitArticle}/>
-
+            <Route  path="/SubmitArticle" component={SubmitArticle}/>           
+            <Route exact path="/404" component={NotFoundPage}/>
+            <Redirect to="/404" />
           </div>
         </div>
         </Router>
